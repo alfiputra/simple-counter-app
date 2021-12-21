@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Simple Counter App</string>
+    <string name="clickMe">Click Me!</string>
+    <string name="btnReset">Reset</string>
+</resources>
