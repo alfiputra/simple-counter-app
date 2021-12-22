@@ -11,7 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnClickMe = findViewById<Button>(R.id.btnClickMe)
+        clickMeButton()
+        resetButton()
+        /*val btnClickMe = findViewById<Button>(R.id.btnClickMe)
         val textCounter = findViewById<TextView>(R.id.textView)
         var timesClicked = 0
 
@@ -24,6 +26,30 @@ class MainActivity : AppCompatActivity() {
         val reset = findViewById<Button>(R.id.btnResetCounter)
 
         reset.setOnClickListener {
+            timesClicked = 0
+            textCounter.text = timesClicked.toString()
+            Toast.makeText(this@MainActivity, "Successfully Reset", Toast.LENGTH_SHORT).show()
+        }*/
+    }
+
+    private var timesClicked = 0
+
+    private fun clickMeButton(){
+        val clickMeButton = findViewById<Button>(R.id.btnClickMe)
+        val textCounter = findViewById<TextView>(R.id.textView)
+
+        clickMeButton.setOnClickListener{
+            timesClicked += 1
+            textCounter.text = timesClicked.toString()
+            Toast.makeText(this@MainActivity, "You Click Me..", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun resetButton(){
+        val resetButton = findViewById<Button>(R.id.btnResetCounter)
+        val textCounter = findViewById<TextView>(R.id.textView)
+
+        resetButton.setOnClickListener {
             timesClicked = 0
             textCounter.text = timesClicked.toString()
             Toast.makeText(this@MainActivity, "Successfully Reset", Toast.LENGTH_SHORT).show()
